@@ -13,6 +13,8 @@ While developing this script I was using VLC v2.2.4 and Python v2.7.10/v3.4.3.
     The directions stated in this file assume default VLC settings for the Web
     Interface before starting.
 
+Link to script on [OBS Forums](https://obsproject.com/forum/resources/vlc-nowplaying.244/)
+
 ## Updates
     
     Version 1.5.0
