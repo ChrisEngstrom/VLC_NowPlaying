@@ -1,8 +1,8 @@
-# VLC_NowPlaying 1.5.0
+# VLC_NowPlaying 1.6.0
 
 Author:         Tipher88  
 Contributors:   AbyssHunted, Etuldan  
-Date:           20160708
+Date:           20181103
 
 ---
 
@@ -16,6 +16,9 @@ While developing this script I was using VLC v2.2.4 and Python v2.7.10/v3.4.3.
 Link to script on [OBS Forums](https://obsproject.com/forum/resources/vlc-nowplaying.244/)
 
 ## Updates
+    
+    Version 1.6.0
+        - Added handling for Unicode BOM as well as some minor optimizations
     
     Version 1.5.0
         - Unicode characters should now be supported in the meta-data
