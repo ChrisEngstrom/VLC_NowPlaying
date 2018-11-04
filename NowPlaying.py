@@ -95,7 +95,7 @@ def getInfo():
             if(songTitle != 'UNKNOWN' and
                songArtist != 'UNKNOWN'):
                 # Both songTitle and song Artist have been set so use both
-                titleAndArtist = '';
+                titleAndArtist = ''
                 if(pythonVersion > 2):
                     titleAndArtist = ('%s - %s' % (songTitle, songArtist))
                 else:
