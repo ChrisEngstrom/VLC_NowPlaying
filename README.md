@@ -9,11 +9,18 @@ Date:           20181103
 This is a script that allows you to create a NowPlaying.txt file to display song
     information from VLC.
 
-While developing this script I was using VLC v2.2.4 and Python v2.7.10/v3.4.3.
-    The directions stated in this file assume default VLC settings for the Web
-    Interface before starting.
+While developing this script I used VLC v2.2.4-v3.0.4 and Python v2.7.10/v3.4.3.
 
 Link to script on [OBS Forums](https://obsproject.com/forum/resources/vlc-nowplaying.244/)
+
+##### Console Output:
+![Console Output](screenshots/Console.PNG)
+
+##### NowPlaying.txt, contains only the current song + separator::
+![NowPlaying](screenshots/NowPlaying.PNG)
+
+##### NowPlaying_History.txt, contains all songs played with a timestamp for reference:
+![NowPlaying History](screenshots/NowPlaying_History.PNG)
 
 ## Updates
     
@@ -42,6 +49,8 @@ Link to script on [OBS Forums](https://obsproject.com/forum/resources/vlc-nowpla
         requests (http://www.python-requests.org/en/latest/)
 
 ### Instructions for using the script:
+
+The directions assume default VLC settings for the Web Interface before starting.
 
     Extract the contents of the .zip to a location of your choosing
 
@@ -84,11 +93,13 @@ Link to script on [OBS Forums](https://obsproject.com/forum/resources/vlc-nowpla
         3. Run the command: python NowPlaying.py
         4. Start playing songs in VLC media player
         5. You should see the song info show up in the console
-        6. You should also see a NowPlaying.txt file appear with text that
-            matches what is displayed in the console
-        7. Keep the script running while you stream
-        8. Enter ctrl + c to exit the script once you are done streaming
+        6. You should see a NowPlaying.txt file appear with the song
+            information text and separator appended to the end
+        7. You should see a NowPlaying_History.txt file appear with the song
+            information as well as a timestamp for reference
+        8. Keep the script running while you stream
+        9. Enter ctrl + c to exit the script once you are done streaming
     
-    OBS:
+    OBS (optional):
         1. Add a text source to OBS with the "Use Text From File" pointing to
             the file generated from the script
