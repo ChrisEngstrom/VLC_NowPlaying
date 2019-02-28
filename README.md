@@ -1,8 +1,8 @@
-# VLC_NowPlaying 1.6.0
+# VLC_NowPlaying 1.7.0
 
 Author:         Tipher88  
 Contributors:   AbyssHunted, Etuldan  
-Date:           20181103
+Date:           20190227
 
 ---
 
@@ -14,15 +14,18 @@ While developing this script I used VLC v2.2.4-v3.0.4 and Python v2.7.10/v3.4.3.
 Link to script on [OBS Forums](https://obsproject.com/forum/resources/vlc-nowplaying.244/)
 
 ##### Console Output:
-![Console Output](screenshots/Console.PNG)
+![Console Output](docs/screenshots/Console.PNG)
 
 ##### NowPlaying.txt, contains only the current song + separator::
-![NowPlaying](screenshots/NowPlaying.PNG)
+![NowPlaying](docs/screenshots/NowPlaying.PNG)
 
 ##### NowPlaying_History.txt, contains all songs played with a timestamp for reference:
-![NowPlaying History](screenshots/NowPlaying_History.PNG)
+![NowPlaying History](docs/screenshots/NowPlaying_History.PNG)
 
 ## Updates
+    
+    Version 1.7.0
+        - Fixed UnicodeEncodeError cause by improper encoding
     
     Version 1.6.0
         - Added handling for Unicode BOM as well as some minor optimizations

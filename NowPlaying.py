@@ -5,8 +5,8 @@
 #                   the info for the song that is currently being played via VLC
 # author          :Tipher88
 # contributors    :AbyssHunted, Etuldan
-# date            :20181103
-# version         :1.6.0
+# date            :20190227
+# version         :1.7.0
 # usage           :python NowPlaying.py
 # notes           :For this script to work you need to follow the instructions
 #                   in the included README.txt file
@@ -34,13 +34,13 @@ currentSongInfo = ''
 
 def getInfo():
     # CUSTOM: Separator can be changed to whatever you want
-    separator = '   |   '
+    separator = u'   |   '
     
-    nowPlaying = 'UNKNOWN'
-    songTitle = 'UNKNOWN'
-    songArtist = 'UNKNOWN'
-    fileName = ''
-    
+    nowPlaying = u'UNKNOWN'
+    songTitle = u'UNKNOWN'
+    songArtist = u'UNKNOWN'
+    fileName = u''
+
     s = requests.Session()
     
     # CUSTOM: Username is blank, just provide the password
@@ -56,10 +56,11 @@ def getInfo():
     except:
         print('Web Interface Error: Is VLC running? Did you enable the Web Interface as described in the README.txt?')
         return
-    
+
     # Okay, now we know we have a response with our xml data in it
     # Save the xml element tree response data
-    root = ET.fromstring(r.content)
+    parser = ET.XMLParser(encoding="utf-8")
+    root = ET.fromstring(r.content, parser=parser)
     
     # Only update when the player is playing or when we don't already have the song information
     if(root.find('state').text == "playing" or
@@ -71,20 +72,20 @@ def getInfo():
             
             # See if the info node we are looking at is now_playing
             if(name == 'now_playing'):
-                nowPlaying = info.text
+                nowPlaying = removeBOM(info.text)
             else:
                 # See if the info node we are looking at is for the artist
                 if(name == 'artist'):
-                    songArtist = info.text
+                    songArtist = removeBOM(info.text)
                 
                 # See if the info node we are looking at is for the title
                 if(name == 'title'):
-                    songTitle = info.text
+                    songTitle = removeBOM(info.text)
                 
                 # See if the info node we are looking at is for the filename
                 if(name == 'filename'):
                     fileName = info.text
-                    fileName = os.path.splitext(fileName)[0]
+                    fileName = removeBOM(os.path.splitext(fileName)[0])
         # END: for info in root.findall("./information/category[@name='meta']/info")
         
         # If the now_playing node exists we should use that and ignore the rest
@@ -95,12 +96,7 @@ def getInfo():
             if(songTitle != 'UNKNOWN' and
                songArtist != 'UNKNOWN'):
                 # Both songTitle and song Artist have been set so use both
-                titleAndArtist = ''
-                if(pythonVersion > 2):
-                    titleAndArtist = ('%s - %s' % (songTitle, songArtist))
-                else:
-                    titleAndArtist = ('%s - %s' % (unicode(songTitle, 'utf-8-sig'), unicode(songArtist, 'utf-8-sig'))).encode('utf-8')
-                
+                titleAndArtist = ('%s - %s' % (songTitle, songArtist))
                 writeSongInfoToFile(titleAndArtist, separator)
             elif( songTitle != 'UNKNOWN' ):
                 # Just use the songTitle
@@ -124,7 +120,7 @@ def writeSongInfoToFile( songInfo, separator ):
         else:
             currentSongInfo = unicode(songInfo.encode('utf-8'), 'utf-8-sig')
         
-        print(htmlParser.unescape(currentSongInfo))
+        safeprint(htmlParser.unescape(currentSongInfo))
     
         # CUSTOM: The output file name can be changed
         textFile = codecs.open('NowPlaying.txt', 'w', encoding='utf-8', errors='ignore')
@@ -138,6 +134,30 @@ def writeSongInfoToFile( songInfo, separator ):
         textFile.write(htmlParser.unescape(('%s: %s%s') % (timeStamp, currentSongInfo, os.linesep)))
         textFile.close()
 # END: writeSongInfoToFile( songInfo, separator )
+
+def removeBOM(s):
+    result = u''
+
+    # Check for python v2 string
+    if (sys.version_info < (3,) and
+        isinstance(s, str)):
+        # Remove possible BOM and return unicode
+        result = unicode(s.encode('utf-8'), 'utf-8-sig')
+    else:
+        result = s
+    
+    return result
+# END: removeBOM(s)
+
+def safeprint(s):
+    try:
+        print(s)
+    except UnicodeEncodeError:
+        if sys.version_info >= (3,):
+            print(s.encode('utf-8').decode(sys.stdout.encoding))
+        else:
+            print(s.encode('utf-8').decode(sys.stdout.encoding))
+# END: safeprint(s)
 
 if __name__ == '__main__':
     while 1:
