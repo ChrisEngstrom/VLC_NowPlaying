@@ -25,7 +25,7 @@ Link to script on [OBS Forums](https://obsproject.com/forum/resources/vlc-nowpla
 ## Updates
     
     Version 1.7.0
-        - Fixed UnicodeEncodeError cause by improper encoding
+        - Fixed UnicodeEncodeError caused by improper encoding
     
     Version 1.6.0
         - Added handling for Unicode BOM as well as some minor optimizations
