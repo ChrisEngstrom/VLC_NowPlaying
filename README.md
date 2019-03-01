@@ -1,4 +1,4 @@
-# VLC_NowPlaying 1.7.0
+# VLC_NowPlaying 1.7.1
 
 Author:         Tipher88  
 Contributors:   AbyssHunted, Etuldan  
@@ -9,7 +9,7 @@ Date:           20190227
 This is a script that allows you to create a NowPlaying.txt file to display song
     information from VLC.
 
-While developing this script I used VLC v2.2.4-v3.0.4 and Python v2.7.10/v3.4.3.
+While developing this script I used VLC v2.2.4-v3.0.4 and Python v2.7/v3.4-7.
 
 Link to script on [OBS Forums](https://obsproject.com/forum/resources/vlc-nowplaying.244/)
 
