@@ -15,11 +15,11 @@
 
 import sys, os, time, datetime, requests, codecs
 import xml.etree.ElementTree as ET
-from idna.core import unicode
 
 if(sys.version_info >= (3,)):
     # Python 3 or greater
     import html
+    from idna.core import unicode
 else:
     # Python 2
     from HTMLParser import HTMLParser
