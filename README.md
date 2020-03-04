@@ -1,3 +1,5 @@
+![Build Python Application](https://github.com/ChrisEngstrom/VLC_NowPlaying/workflows/Build%20Python%20Application/badge.svg)
+
 # VLC_NowPlaying 1.7.1
 
 Author:         Tipher88  
