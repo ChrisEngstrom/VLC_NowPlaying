@@ -1,7 +1,7 @@
 ### Python Builds
-[![Python 3.8 Build](https://github.com/ChrisEngstrom/VLC_NowPlaying/workflows/3.8/badge.svg)](https://github.com/ChrisEngstrom/VLC_NowPlaying/actions)
-[![Python 3.7 Build](https://github.com/ChrisEngstrom/VLC_NowPlaying/workflows/3.7/badge.svg)](https://github.com/ChrisEngstrom/VLC_NowPlaying/actions)
-[![Python 2.7 Build](https://github.com/ChrisEngstrom/VLC_NowPlaying/workflows/2.7/badge.svg)](https://github.com/ChrisEngstrom/VLC_NowPlaying/actions)
+[![Python 3.8 Build](https://github.com/ChrisEngstrom/VLC_NowPlaying/workflows/v3.8/badge.svg)](https://github.com/ChrisEngstrom/VLC_NowPlaying/actions)
+[![Python 3.7 Build](https://github.com/ChrisEngstrom/VLC_NowPlaying/workflows/v3.7/badge.svg)](https://github.com/ChrisEngstrom/VLC_NowPlaying/actions)
+[![Python 2.7 Build](https://github.com/ChrisEngstrom/VLC_NowPlaying/workflows/v2.7/badge.svg)](https://github.com/ChrisEngstrom/VLC_NowPlaying/actions)
 
 # VLC_NowPlaying 1.7.1
 
