@@ -10,7 +10,7 @@
 # usage           :python NowPlaying.py
 # notes           :For this script to work you need to follow the instructions
 #                   in the included README.txt file
-# python_version  :2.7 & 3.4-7
+# python_version  :2.7 & 3.7
 #===============================================================================
 
 import sys, os, time, datetime, requests, codecs
