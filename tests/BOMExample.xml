@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<root>
+  <state>playing</state>
+  <information>
+    <category name="meta">
+      <info name="now_playing">ï»¿testArtist - testTitle</info>
+      <info name="artist">ï»¿Test Artist</info>
+      <info name="title">ï»¿Test Title</info>
+      <info name="filename">ï»¿testFileName</info>
+    </category>
+  </information>
+</root>

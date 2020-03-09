@@ -164,6 +164,8 @@ def safeprint(s):
             print(s.encode('utf-8').decode(sys.stdout.encoding))
         else:
             print(s.encode('utf-8'))
+    
+    sys.stdout.flush()
 # END: safeprint(s)
 
 if(__name__ == '__main__'):

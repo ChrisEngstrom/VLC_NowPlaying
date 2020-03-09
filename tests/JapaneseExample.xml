@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<root>
+  <state>playing</state>
+  <information>
+    <category name="meta">
+      <info name="now_playing">テストタイトル - 目黒 将司</info>
+      <info name="artist">目黒 将司</info>
+      <info name="title">テストタイトル</info>
+      <info name="filename">20. テストタイトル.flac</info>
+    </category>
+  </information>
+</root>
